@@ -22,7 +22,8 @@ List any software, tools, or dependencies that users need to have installed befo
 
 ## Live Link
 
-Visit the live site: [Live Link](https://www.guvi.alchemial.com)
+Visit the live site: [Live Link](https://guvi.alchemial.com) 
+
 Note : live Link only has php and sql feature due to deadline. (For Full Mongodb and Redis feature please run in localhost).
 
 
