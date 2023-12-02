@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $enteredPassword = $_POST["password"];
 
     // prepared statement to check login credentials
-    $stmt = $conn->prepare("SELECT * FROM guvi WHERE email = ?");
+    $stmt = $conn->prepare("SELECT * FROM guvi2 WHERE email = ?");
     $stmt->bind_param("s", $enteredEmail);
     $stmt->execute();
 

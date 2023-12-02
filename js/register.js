@@ -1,6 +1,5 @@
 //Calling register.php Using AJAX
 
-
 $(document).ready(function () {
     $("#registrationForm").submit(function (event) {
         event.preventDefault();
@@ -15,7 +14,6 @@ $(document).ready(function () {
             url: "../guvi/php/register.php",
             data: formData,
             success: function (response) {
-                // Check if the registration was successful
                 if (response === "Registration successful!") {
                     // Set email and login status in local storage
                     localStorage.setItem("email", $("#email").val());

@@ -1,35 +1,29 @@
 <?php
-// Database connection parameters
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "guvi";
 
-// Create a new MySQLi connection
-$conn = new mysqli($servername, $username, $password, $database);
 
-// Check the connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require_once __DIR__ . '../../vendor/autoload.php';
 
-// Get the email from the POST data
+
+$client = new MongoDB\Client();
+
+
+$database = $client->selectDatabase('guvi');
+$collection = $database->selectCollection('profile');
+
 $userEmail = $_POST['email'];
 
-// prepared statement to retrieve user details from the 'users' table
-$stmt = $conn->prepare("SELECT name, email, mobile FROM guvi WHERE email = ?");
-$stmt->bind_param("s", $userEmail);
-$stmt->execute();
-$stmt->bind_result($userName, $userEmail, $userMobile);
+
+// Find user in MongoDB
+$user = $collection->findOne(['email' => $userEmail]);
 
 // Fetch the result
-if ($stmt->fetch()) {
+if ($user) {
     // User found, return details
-    $userData = array(
-        "name" => $userName,
-        "email" => $userEmail,
-        "mobile" => $userMobile
-    );
+    $userData = [
+        "name" => $user['name'],
+        "email" => $user['email'],
+        "mobile" => $user['mobile']
+    ];
 
     // Output the user details as JSON
     echo json_encode($userData);
@@ -38,7 +32,4 @@ if ($stmt->fetch()) {
     echo "User not found";
 }
 
-$stmt->close();
-
-$conn->close();
 ?>
