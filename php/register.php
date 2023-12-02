@@ -1,7 +1,15 @@
+
+<!-- 
+In this file 
+step 1) First we will check the email is already exist or not, If not exist then we will insert Email, full name, Mobile in Mongodb
+step 2) Email and password will be saved in sql database [Email act as primary key].
+step 3) It will add login data in browser localhost like email and isLoggedIn. and redirect to profile page directly. 
+-->
+
+
 <?php
 
 require_once __DIR__ . '../../vendor/autoload.php';
-
 
 // Database connection parameters
 $servername = "localhost";

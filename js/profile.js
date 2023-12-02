@@ -1,9 +1,6 @@
 //Calling profile.php Using AJAX
 
-
 $(document).ready(function () {
-    // Check if the user is logged in
-    var isLoggedIn = localStorage.getItem("login");
 
     // If logged in, make an AJAX request to fetch user details
     var userEmail = localStorage.getItem("email");
