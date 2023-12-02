@@ -40,4 +40,3 @@ Note : live Link only has php and sql feature due to deadline. (For Full Mongodb
 4. Start the Xampp, start server and sql.
 5. Make sure redis is install and running on 6379.
 6. open localhost/Guvi/.
-7. Mak
