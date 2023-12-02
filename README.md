@@ -20,12 +20,23 @@ List any software, tools, or dependencies that users need to have installed befo
 - Bootstrap
 - Redis
 
-## Getting Started
+## Live Link
+
+Visit the live site: [Live Link](https://www.guvi.alchemial.com)
+Note : live Link only has php and sql feature due to deadline. (For Full Mongodb and Redis feature please run in localhost).
+
+
+## Local Setup
 
 1. Clone the repository:
 
    ```bash
    git clone https://github.com/your-username/your-project.git
 
-2. Start the Xampp, start server and sql
-3. open localhost/Guvi/
+2. Run in your working directory
+   ```bash
+   composer install
+4. Start the Xampp, start server and sql.
+5. Make sure redis is install and running on 6379.
+6. open localhost/Guvi/.
+7. Mak
